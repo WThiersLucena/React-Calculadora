@@ -13,31 +13,24 @@ const initialState = { // Setando valores iniciais
 }
 
 class Calculator extends Component {
-
-    // ...initialState faz um clone dos atributos da const initialState para state
-    
+    // ...initialState colna os atributos da const initialState para state    
     state = { ...initialState }
-
-    // resetar para valores iniciais
-    clearMemory = () => {
+   
+    clearMemory = () => { // resetar valores iniciais
         this.setState({...initialState});
     }
 
-    setOperation = (operation) => {
-        // condicao para conferir se a posicao atual do array eh 0
+    setOperation = (operation) => {//Conferir se a posicao atual do array eh 0        
         if (this.state.resultado == 0) {
-            // seta a operacao para a que foi clicada e passada como parametro,
-            // pula para a posicao 1 do array e seta clearDisplay para true,
-            // assim, quando algum outro valor for digitado, caira na condicao de clearDisplay
-            // true 
-            // e limpara o display para que um novo valor seja digitado
+            // seta a operacao como parametro,
+            // pula para a posicao 1 do array e seta clearDisplay para true,            
             this.setState({operation, resultado: 1, clearDisplay: true});
         } else {
-            const equals = operation == "="; // se o parametro operation for '=', const equals recebe true
+            const equals = operation == "="; // se o parametro operation for '=', equals recebe true
             const resultadoOperation = this.state.operation; // atribue a resultadoOperetion o valor de state operation (essa sera a operacao atual)
             const valor = [...this.state.valor]; // array de const valor recebe os valores do array de state valor
 
-           // condicoes para cada tipo de operacao
+           // condicoes para operacões
             switch(resultadoOperation) {
                 case "+":
                     valor[0] += valor[1];
@@ -60,7 +53,7 @@ class Calculator extends Component {
             // atribui os valores gerados aos atributos de state
             if (valor[0] % 1 != 0) {
                 this.setState({
-                    displayValue: String(valor[0].toFixed(3)) // display recebe convertido para string o valor da posicao 0 do array
+                    displayValue: String(valor[0].toFixed(3)) // display recebe convertido para string o valor da posicao 0 do array onde estava o resultado
                 });
             } else {
                 this.setState({
