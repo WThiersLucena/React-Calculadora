@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import './App.css';
 import Calculator from './main/Calculator'
 
 
+
 function App() {
-  return (
+
+    return (
     <div>
-      <h1>Calculator</h1>
+      <h1>Calculadora</h1>
       <Calculator/>
     </div>
   );

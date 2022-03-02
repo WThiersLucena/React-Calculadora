@@ -4,6 +4,7 @@
     --border-button: solid 1px #888;
     --bg-operation: #fa8231;
     --bg-operation-active: #fa8131cc;
+    --bg-button2:#f52323;
 }
 
 .button {
@@ -17,6 +18,7 @@
 
 .button:active {
     background-color: var(---bg-button-active);
+    color:var(--bg-button2);
 }
 
 .button.operation {
@@ -34,4 +36,5 @@
 
 .button.operation:active {
     background-color: var(--bg-operation-active);
+    
 }
